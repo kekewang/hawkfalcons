@@ -6,7 +6,7 @@ CentOS 7 began to use Systemd as the default startup script management tool, Sha
 ## Quick Start
 
 ### Install pip
-pip is the python package management tool. This article will use the python version of shadowsocks, this version of shadowsocks has been published to the pip, so we need to pip order to install it.
+pip is the python package management tool. This article will use the python version of shadowsocks, this version of shadowsocks has been published to the pip, so we need to use pip command to install it.
 
 Install the pip by executing the following command in the console:
 ``` bash
@@ -22,7 +22,7 @@ $ pip install shadowsocks
 ```
 
 After the pip installation, we need create the config file /etc/shadowsocks.json with this content
-``` bash
+```
 {
   "server": "0.0.0.0",
   "server_port": 8388,
@@ -31,14 +31,14 @@ After the pip installation, we need create the config file /etc/shadowsocks.json
 }
 ```
 Explanation:
-method for the encryption method, optional aes-128-cfb, aes-192-cfb, aes-256-cfb, bf-cfb, cast5-cfb, des-cfb, rc4-md5, chacha20, salsa20, rc4, table.
-server_port is the service listening port.
-password for the account password, you can use the password generation tool to generate a random password.
+**method** for the encryption method, optional aes-128-cfb, aes-192-cfb, aes-256-cfb, bf-cfb, cast5-cfb, des-cfb, rc4-md5, chacha20, salsa20, rc4, table.
+**server_port** is the service listening port.
+**password** for the account password, you can use the password generation tool to generate a random password.
 The above three information in the configuration should be consistent with the shadowsocks client, specific instructions can be seen shadowsocks help documentation.
 
 ### Configuration startup
 Create the startup script file with the content below, /etc/systemd/system/shadowsocks.service
-``` bash
+```
 [Unit]
 Description=Shadowsocks
 
@@ -60,7 +60,7 @@ To check whether the shadowsocks service has started successfully, you can perfo
 systemctl status shadowsocks -l
 ```
 If the service is up, you can see the infomation below in the console:
-``` bash
+```
  shadowsocks.service - Shadowsocks
    Loaded: loaded (/etc/systemd/system/shadowsocks.service; enabled; vendor preset: disabled)
    Active: active (running) since Mon 2015-12-21 23:51:48 CST; 11min ago
@@ -154,7 +154,7 @@ $ ./install-shadowsocks.sh
 ```
 
 After installation, it will print the Shadowsocks configuration infomations, like this,
-``` bash
+```
 Congratulations! Shadowsocks has been installed on your system.
 You shadowsocks connection info:
 --------------------------------
@@ -166,7 +166,7 @@ method:      aes-256-cfb
 ```
 
 More Info:
-[Install pip](https://pip.pypa.io/en/stable/installing/)
-[How to Install Pip on Centos 7](http://www.liquidweb.com/kb/how-to-install-pip-on-centos-7/)
-[How to Create a systemd Service in Linux(Centos7)](https://scottlinux.com/2014/12/08/how-to-create-a-systemd-service-in-linux-centos-7/)
-[Getting Started with systemd](https://coreos.com/docs/launching-containers/launching/getting-started-with-systemd/)
+[**Install pip**](https://pip.pypa.io/en/stable/installing/)
+[**How to Install Pip on Centos 7**](http://www.liquidweb.com/kb/how-to-install-pip-on-centos-7/)
+[**How to Create a systemd Service in Linux(Centos7)**](https://scottlinux.com/2014/12/08/how-to-create-a-systemd-service-in-linux-centos-7/)
+[**Getting Started with systemd**](https://coreos.com/docs/launching-containers/launching/getting-started-with-systemd/)
