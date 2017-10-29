@@ -1,5 +1,6 @@
 ---
 title: How to write a spider
+tags: [Spider, WebMagic, Proxy, IP Pool]
 ---
 # Overview
 
@@ -105,3 +106,8 @@ public class ProxyValidater {
 }
 ```
 When we get enough proxy ips, we can use proxy to fetch the pages.
+
+
+More Info:
+[**WebMagic**](http://webmagic.io/en/)
+[**Github**](https://github.com/kekewang/Spider)

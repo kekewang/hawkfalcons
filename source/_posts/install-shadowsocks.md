@@ -1,5 +1,6 @@
 ---
 title: One-click install Shadowsocks on Centos 7
+tags: [Shadowsocks, Centos 7, Pip]
 ---
 CentOS 7 began to use Systemd as the default startup script management tool, Shadowsocks is the most popular science online tool, this article will introduce how to install and configure Shadowsocks services on CentOS.
 
@@ -36,7 +37,7 @@ Explanation:
 **password** for the account password, you can use the password generation tool to generate a random password.
 The above three information in the configuration should be consistent with the shadowsocks client, specific instructions can be seen shadowsocks help documentation.
 
-### Configuration startup
+### Startup configuration
 Create the startup script file with the content below, /etc/systemd/system/shadowsocks.service
 ```
 [Unit]
@@ -57,7 +58,7 @@ $ systemctl start shadowsocks
 
 To check whether the shadowsocks service has started successfully, you can perform the following command to view the status of the service:
 ``` bash
-systemctl status shadowsocks -l
+$ systemctl status shadowsocks -l
 ```
 If the service is up, you can see the infomation below in the console:
 ```
